@@ -6,7 +6,7 @@ This program is example of simple audio signal level meter for my article on Med
 
 Russian version in book (page 20):<br>["Изучаем Mediastreamer2"](https://drive.google.com/file/d/1OEY1VwcelQXMg3oF0HFuolZ11dlFv1lO/view?usp=sharing) 
 
-Scheme of generator<br>
+Scheme of meter<br>
 ![image](https://user-images.githubusercontent.com/1526432/228359749-4c5e569d-d05f-45db-9dff-156661b5ab4b.png)
 
 ## How to compile
