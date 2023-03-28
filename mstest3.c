@@ -33,7 +33,9 @@ int main()
   /* Connect the clock source. */
     ms_ticker_attach(ticker,voidsource);
     MSDtmfGenCustomTone dtmf_cfg;
-   /* We set the name of our signal, remembering that in the array we must leave room for a zero, which marks the end of the line. */
+   
+   /* We set the name of our signal, remembering that in the array we must
+    leave room for a zero, which marks the end of the line. */
     strncpy(dtmf_cfg.tone_name, "busy", sizeof(dtmf_cfg.tone_name));
     dtmf_cfg.duration=1000;
     dtmf_cfg.frequencies[0]=440; /* We will generate one tone, set the frequency of the second tone to 0.*/
@@ -41,12 +43,16 @@ int main()
     dtmf_cfg.amplitude=1.0; /* This sine amplitude should correspond to a measurement result of 0.707.*/
     dtmf_cfg.interval=0.;
     dtmf_cfg.repeat_count=0.;
+
    /* Turn on the sound generator. */
    ms_filter_call_method(dtmfgen, MS_DTMF_GEN_PLAY_CUSTOM, (void*)&dtmf_cfg);
+
    /* We give half a second time for the meter to accumulate data. */
    ms_usleep(500000);
+
    /* Reading the measurement result. */
   float level=0;
    ms_filter_call_method(volume, MS_VOLUME_GET_LINEAR,&level);
-   printf("The amplitude of the sine %f volts corresponds to the rms value of %f volts.\n", dtmf_cfg.amplitude, level);
+   printf("The amplitude of the sine %f volts corresponds to the rms value of %f volts.\n",
+           dtmf_cfg.amplitude, level);
 }
