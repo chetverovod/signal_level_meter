@@ -16,14 +16,11 @@ int main()
     /* Instantiating filters. */
     MSFilter *voidsource = ms_factory_create_filter(mf, MS_VOID_SOURCE_ID);
     MSFilter *dtmfgen = ms_factory_create_filter(mf, MS_DTMF_GEN_ID);
-    MSFilter  ms_factory_create_filter(mf, MS_VOLUME_ID);
+    MSFilter *volume = ms_factory_create_filter(mf, MS_VOLUME_ID);
     MSSndCardManager *scm; /* Soundcards manager. */
     scm = ms_factory_get_snd_card_manager(mf);
     MSSndCard *card_playback = ms_snd_card_manager_get_default_card(scm);
     MSFilter  *snd_card_write = ms_snd_card_create_writer(card_playback);
-  
-    //MSSndCard *card_playback=ms_snd_card_manager_get_default_card(ms_snd_card_manager_get());
-    //MSFilter  *snd_card_write=ms_snd_card_create_writer(card_playback);
   
     /* Create a ticker. */
     MSTicker *ticker=ms_ticker_new();

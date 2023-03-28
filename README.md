@@ -19,4 +19,8 @@ $ gcc mstest3.c -o mstest3 `pkg-config mediastreamer --libs --cflags`
 ```
 $ ./mstest3
 ```
-You will see prints of measurement signal.
+You will hear short single tone sound and see result of signal measurement.
+Output print is looking like this:
+```
+The amplitude of the sine 1.000000 volts corresponds to the rms value of 0.707649 volts.
+```
