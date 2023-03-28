@@ -12,7 +12,7 @@ Scheme of generator<br>
 ## How to compile
 
 ```
-$ gcc mstest2.c -o mstest3 `pkg-config mediastreamer --libs --cflags`
+$ gcc mstest3.c -o mstest3 `pkg-config mediastreamer --libs --cflags`
 ```
 ## How to run
 
